@@ -1,0 +1,454 @@
+/*公用*/
+.comWidth{width: 1000px;margin: 0 auto;}
+.leftArea{float: left;}
+.rightArea{float: right;}
+ .hide{display: none;}
+ .show{display: block;}
+
+/*headerBar*/
+.topBar{
+	height: 31px;
+    background-color: #f7f7f7;
+    color: #666666;
+    line-height: 31px;/*垂直居中*/
+   }
+.collection{
+	background: url(../img/icon/collection.jpg) left center no-repeat;
+	padding-left:19px;/*element右移19px*/
+	font-weight: bold;
+}
+.topBar a:hover{color:blue;}
+
+/*logo*/
+.logoBar{
+	height: 85px;
+	background-color: #1d7ad9;
+}
+.logo{
+	height: 85px;
+}
+/*search_box*/
+.search_box{
+	height: 35px;
+	width: 430px;
+	padding-top: 23px;
+	padding-left: 147px;
+	}
+.search_text{
+	height: 35px; 
+	width: 350px;
+	padding-left: 10px;
+	line-height: 35px/9;/*解决ie6问题 --- css hack*/
+	background-color: #FFFFFF;
+	}
+.search_btn{
+	height: 35px;
+	width: 70px;
+	color:#FFFFFF;
+	font-size:14px;
+	background-color:#FF8C00;
+	font-family: "微软雅黑";
+	}
+
+/*shopCar*/
+.shopCar{
+	height: 35px;
+	width: 145px;
+	line-height: 35px;
+	font-family: "微软雅黑";
+	color: #FFFFFF;
+	font-size: 14px;
+	margin-left: 25px;
+	margin-top: 23px;
+	margin-right: 59px;
+	background-color: #FF8800;
+}
+.shopText{
+	height: 35px;
+	width: 87px;
+	border-right:1px solid #E27A00;
+	background: url(../img/icon/shopCar.png)no-repeat 10px center;
+	/*padding-left: 40px;*/
+	text-indent: 40px;/*首行缩进，可省略计算width变化*/
+}
+.shopNum{
+	height: 35px;
+	width: 27px;
+	border-left: solid 1px #FF9C01;
+	background: url(../img/icon/shopNum.png)no-repeat 33px center;
+	text-align: right;  /*右对齐，向左增长*/
+	padding-right: 29px;
+}
+
+/*navBar导航*/
+.navBar{
+	height: 35px;
+	background-color: #1369C0;
+	font-family: "微软雅黑";
+	color: #FFFFFF;
+}
+.nav a{
+	color: #FFFFFF;
+	display: inline-block;
+	height: 35px;
+}
+/*全部商品分类shopClass*/
+.shopClass{
+	width: 190px;
+	/*  */ 
+	position: relative;
+	background: url(../img/icon/shopClass.png)148px 15px no-repeat;
+}
+.shopClass_show{
+	  /*
+	   * 这里是要做一个弹出隐藏的列表，如果不把positon设置为absolute的话，会占据文档流位置，
+	            这样设置为绝对布局后，不管显示或者隐藏，都不会占据所覆盖的下方空间。
+                         如果不加的话，每次hide变为show的时候，都会使下方布局变乱。
+        position 中的四个属性里，absolute和fixed,不会占，relative和static会占
+        */
+	position: absolute;/*！！！！！！*/
+	left: 0;
+	top: 35px;/*shopClass_show--在shopClass中，相对于shopClass绝对定位*/
+	width: 100%;
+	}
+.shopClass h3{
+	line-height: 35px;	
+	font-size: 16px;
+	text-align: center;/*水平居中*/
+	}
+
+/*导航条*/
+.nav li{
+	float: left;
+}
+.nav a{
+	width: 100px;
+	text-align: center;
+	line-height: 35px;
+    font-size: 14px;
+}
+.nav .active,.nav a:hover{background-color: #4593FD;}
+
+/*shopClass_item*/
+.shopClass_item{
+	background-color:#4593FD ;
+	font-size: 12px;
+	padding:12px 10px;
+	border-bottom:2px solid #3487F2;
+	border-top:2px solid #5AA1FE;
+}
+.shopClass_item .b{
+	font-family: "微软雅黑";
+	font-size: 14px;
+	font-weight: bold;
+}
+.shopClass_item a{
+	color: #FFFFFF;
+}
+.shopClass_item a:hover{
+	text-decoration: underline;
+}
+.shopClass_item dt{
+	height: 20px;    /*行高直接设置dt*/
+	background: url(../img/icon/right_s.jpg)right top no-repeat;   /*三角作为dt的背景*/
+	}  
+.shopClass_item .alink{
+	background: url(../img/shopClass_item.png)left center no-repeat;
+	height: 20px;
+	width: 48px;
+	text-align: center;
+	line-height: 20px;
+	text-decoration: underline;
+	display: inline-block;/*显示出完整图像，由于内嵌元素不能设置宽高，需要转换为块级*/
+}
+/*shopClass_item active弹出状态*/
+.shopClass_active{
+	background-color: #FFFFFF;
+	font-weight: bold;
+	border-left: 1px #4593FD solid;
+}
+.shopClass_active a{
+	color: #000000;
+}
+.shopClass_active .alink{
+	color:#FFFFFF;
+	background: url(../img/shopClass_item1.png);
+}
+.shopClass_active dt{
+	background: none;
+}
+.shopClass_active .alink{
+	text-decoration: none;
+}
+/*弹出的菜单*/
+.shopClass_list{
+	width: 569px;
+	border: solid 1px #ccc;
+	/*绝对定位*/
+	position: absolute;
+	left: 190px;
+	top: 35px;
+}
+.shopList_show{
+	border-bottom: 2px #E5E5E5 solid ;
+	padding-top: 10px;
+}
+.shopList_show dt{
+	color: #4B88DA;
+	font: "微软雅黑" 12px;
+	font-weight: bold;
+	/*区别：
+	 * line-height:定义行高，实际高度将取决于内容的多少
+	 * height：元素的高度，内容多了则会溢出
+	 * line-height=height：字体垂直居中
+	 */
+	line-height: 24px;
+}
+.shopList_show dd{
+	color: #656565;
+	margin-left: 68px;
+	margin-top: -24px;
+	line-height: 24px;
+}
+.shopList_show dd a{
+	display: inline-block;
+	padding: 0 7px;
+}
+.shopList_cont{
+	width: 526px;
+    margin:10px 19px;
+}
+.shopList_btn{
+	height: 55px;
+	line-height: 55px;
+}
+.shopList_btn a{
+	display: inline-block;
+	width: 105px;
+	height: 26px;
+	line-height: 26px;
+	padding-left: 9px;
+	color: #FFFFFF;
+	background: url(../img/shopList_btn.jpg)left center no-repeat;
+}
+
+/*banner*/
+/*
+    做图片滑动效果时，
+    1.可以采用的一种方法是：用ul--img_box给足够的宽度 li
+    2.给图片并float:left或right;
+    3.在父级元素 img_box--overflow:hidden;此时溢出去的li中的图片就会隐藏了，
+    4. 在js中减去或加上一张图片的宽度，
+    5.（当然了ul给个绝对定位（给top和left），要相对的那个给一个相对定位父级）
+    6.还需要给图片一个宽高，但需要把内联元素化为块元素
+    !!！此外，由于相对定位占文件流，但banner_bar是右浮动，故父级banner应该清浮动，让其适应子级的高度
+    */
+
+.banner_bar{
+	float: right; /*大框定位*/
+	position: relative;/*5.加相对定位，则为父级*/
+	overflow: hidden;/*3*/
+}
+.img_box{
+	position: absolute;  /*5.若不加相对定位，则父级是整个页面*/
+	left: 0;
+	top: 0;
+}
+.img_box li{float: left;}/*2*/
+.img_box img{ 
+	display: block;
+}
+
+/*大*/
+.banner_big,
+.banner_big img{
+	width: 810px;
+	height: 326px;
+}
+.banner_big .img_box{
+	width: 1620px;/*1*/
+	height: 326px;
+}
+/*小*/
+.banner_small,
+.banner_small img{
+	width: 190px;
+	height: 400px;
+}
+.banner_small .img_box{
+	width: 380px;/*1*/
+	height: 400px;
+}
+
+.imgNum{
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+.imgNum a{
+	display: inline-block;/*让内嵌元素变成行即块元素*/
+	width: 20px;
+	height: 5px;
+	margin: 0 3px;
+	overflow: hidden;/*为什么？？？*/
+	background-color: #FFFFFF;
+}
+.imgNum .active{  /*设置当前项*/
+	background-color: #FF8800;
+}
+
+.banner_bar .banner_big{}
+
+/*商品标题*/
+.shopTit{
+	height: 44px;
+	font: "微软雅黑" bold;
+	margin: 15px auto;
+}
+.shopTit .icon{
+	width: 44px;
+	height: 44px;
+	display: inline-block;
+	float: left;
+	background: url(../img/shopTit.jpg)left center no-repeat;
+}
+.shopTit h3{
+	font-size: 24px;
+	float: left;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+.more{
+   float: right;
+   color: #000000;
+   font-family: "宋体";	
+   display: inline-block;
+   height: 44px;
+   line-height: 44px;
+}
+.more:hover{color: #1D7AD9;text-decoration: underline;}
+
+/*商品列表*/
+.shopList{
+	height: 400px;
+}
+.shopList .leftArea{  /*当浮动过后不在了，需要清父级的浮动*/
+	width: 190px;
+	height: 100%;
+}
+
+.shopList .rightArea{
+	width: 808px;
+	height: 396px;
+	border: solid 1px #E5E5E5;
+	border-bottom: 3px #FF7201 solid;
+}
+
+/*商品列表右侧_top*/
+.shopList_top{
+	width: 810px;
+	height: 279px;
+}
+.shopList_item{
+	width: 201px;
+	height: 279px;
+	border-bottom: solid 1px #E5E5E5;
+	border-right: solid 1px #E5E5E5;
+	text-align: center;
+	float: left;
+	font-family: "微软雅黑";
+}
+.shop_img{
+	margin-top: 45px;
+	font-weight: bold;
+}
+.shop_img img{
+	width: 132px;
+	height: 150px;
+}
+.shop_img p{
+	color: #FF8D2F;
+	font-size: 14px;
+	margin-top: 10px;
+}
+.shop_img h3{
+	margin-top: 10px;
+	font-size: 16px;
+}
+/*商品列表右侧_bottom*/
+.shopList_bot{
+	width: 810px;
+}
+.shopBot_item{
+	width: 201px;
+	height: 116px;
+	border-right: solid 1px #E5E5E5;
+	text-align: center;padding: ;
+	float: left;
+}
+.bot_img{
+	width: 95px;
+	height: 95px;
+	display: inline-block;
+	float: left;
+	text-align: center;
+
+}
+.bot_img{
+	width: 95px;
+	height: 95px;
+	padding-top: 25px;
+}
+.bot_text{
+	padding-top: 28px;
+}
+.shopBot_item p{
+   color: #FF7300;
+   line-height: 21px;
+   font-size: 12px;
+}
+.shopBot_item span{
+	font-size: 16px;
+	font-weight: bold;
+
+}
+
+/*底部*/
+.footerBar{
+	height: 223px;
+	background-color: #D4D4D4;
+	margin-top: 40px;
+}
+
+.foot_text{
+	width: 718px;
+	height: 41px;
+	text-align: center;
+	padding-top: 45px;
+	margin-bottom: 38px;
+	margin-left: 154px;
+	line-height: 24px;
+	
+}
+.footerBar a{
+	font-family: "新宋体";
+	font-size: 12px;
+	color: #000000;
+}
+.footerBar a:hover{
+	color: #4593FD;
+	text-decoration: underline;
+}
+.foot_box{
+	margin-bottom: 50px;
+    margin-left: 232px;
+}
+.footImg{
+	float: left;
+	margin-right: 20px;
+	height: 46px;
+	width: 128px;
+}
+
